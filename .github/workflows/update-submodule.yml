@@ -6,6 +6,10 @@ on:
       pr_number:
         required: true
         type: string
+      source_repo:
+        description: 'GCWeb or wet-boew'
+        required: true
+        type: string
 
 jobs:
   update-submodules:
@@ -26,14 +30,14 @@ jobs:
 
       - name: Add or update submodule
         env:
-          BRANCH_NAME: ${{ inputs.pr_number }}
+          BRANCH_NAME: ${{ inputs.source_repo }}-pr${{ inputs.pr_number }}
         run: |
           if [ -d "$BRANCH_NAME" ]; then
             echo "Submodule exists. Updating..."
             git submodule update --init --remote "$BRANCH_NAME"
           else
             echo "Adding submodule..."
-            git submodule add -b "$BRANCH_NAME" https://github.com/ServiceCanada/wet-boew-demos.git "$BRANCH_NAME"
+            git submodule add -b "$BRANCH_NAME" https://github.com/tristandasilva/wet-boew-demos.git "$BRANCH_NAME"
           fi
 
       - name: Commit changes
