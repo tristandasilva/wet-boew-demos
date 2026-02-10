@@ -9,26 +9,36 @@ on:
   workflow_dispatch:
     inputs:
       pr_number:
-        description: 'Pull Request branch name (e.g., 1234)'
+        description: 'Pull Request # (e.g., 1234)'
         required: true
         type: string
+      source_repo:
+        description: 'Choose repository'
+        required: true
+        type: choice
+        options:
+          - GCWeb
+          - wet-boew
 
 jobs:
   build-demo:
     if: github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/build-demo.yml
     with:
-      pr_number: ${{ github.event.inputs.pr_number }}
+      pr_number: ${{ inputs.pr_number }}
+      source_repo: ${{ inputs.source_repo }}
     
   update-submodules-on-trigger:
     if: github.event_name == 'workflow_dispatch'
     needs: build-demo
     uses: ./.github/workflows/update-submodule.yml
     with:
-      pr_number: gcweb-pr${{ github.event.inputs.pr_number }}
+      pr_number: ${{ inputs.source_repo }}-pr${{ inputs.pr_number }}
+      source_repo: ${{ inputs.source_repo }}
 
   update-submodules-on-push:
     if: github.event_name == 'push'
     uses: ./.github/workflows/update-submodule.yml
     with:
       pr_number: ${{ github.ref_name }}
+      source_repo: ${{ inputs.source_repo }}

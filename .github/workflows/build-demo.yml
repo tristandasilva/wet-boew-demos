@@ -6,20 +6,41 @@ on:
       pr_number:
         required: true
         type: string
+      source_repo:
+        description: 'GCWeb or wet-boew'
+        required: true
+        type: string
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
     env:
-      GCWEB_REPO: https://github.com/wet-boew/GCWeb.git
-      PR_NUMBER: ${{ github.event.inputs.pr_number }}
-      TARGET_BRANCH: gcweb-pr${{ github.event.inputs.pr_number }}
-      BUILD_DIR: gcweb
+      REPO_URL: https://github.com/wet-boew/${{ inputs.source_repo }}.git
+      PR_NUMBER: ${{ inputs.pr_number }}
 
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
+
+        # ------------------------------
+        #             SETUP
+        # ------------------------------
+
+      - name: Setup Environment
+        id: setup
+        run: |
+          if [ "${{ inputs.source_repo }}" = "GCWeb" ]; then
+            echo "TARGET_BRANCH=gcweb-pr$${{ inputs.pr_number }}" >> $GITHUB_ENV
+            echo "BUILD_DIR=gcweb" >> $GITHUB_ENV
+            echo "OUTPUT_DIR="_site"" >> $GITHUB_ENV
+            echo "IS_GCWEB=true" >> $GITHUB_ENV
+          else
+            echo "TARGET_BRANCH=wet-boew-pr$${{ inputs.pr_number }}" >> $GITHUB_ENV
+            echo "BUILD_DIR=wet-boew" >> $GITHUB_ENV
+            echo "OUTPUT_DIR="dist"" >> $GITHUB_ENV
+            echo "IS_GCWEB=false" >> $GITHUB_ENV
+          fi
 
       - name: Install Ruby and Jekyll
         uses: ruby/setup-ruby@v1
@@ -27,9 +48,9 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
-      - name: Clone GCWeb repository
+      - name: Clone Repo
         run: |
-          git clone $GCWEB_REPO $BUILD_DIR
+          git clone $REPO_URL $BUILD_DIR
           cd $BUILD_DIR
           git fetch origin pull/$PR_NUMBER/head:$TARGET_BRANCH
           git config user.name "github-actions"
@@ -43,23 +64,27 @@ jobs:
 
       # Related to GCWeb#1737 about wet-boew#cc340a6 commit
       - name: Copy the missing _sprite_share.scss file
+        if: env.IS_GCWEB == 'true'
         working-directory: ${{ env.BUILD_DIR }}
         run: |
           curl https://gist.githubusercontent.com/duboisp/d69787b300eb1f4d40f937508e10d013/raw/86e7a0b15ad6a695754599e9793e986b460bf514/_sprites_share.scss >> _sprites_share.scss
           mv _sprites_share.scss node_modules/wet-boew/src/plugins/share/sprites/_sprites_share.scss
 
       - name: Build GCWeb
+        if: env.IS_GCWEB == 'true'
         working-directory: ${{ env.BUILD_DIR }}
         run: grunt demo --branch=$TARGET_BRANCH
 
       # Overwrite all layout and includes and remove dist from .gitignore
       - name: Update GCWeb Jekyll theme files
+        if: env.IS_GCWEB == 'true'
         working-directory: ${{ env.BUILD_DIR }}
         run: |
           cp -R ~jekyll-dist/_includes/* _includes/
           cp -R ~jekyll-dist/_layouts/* _layouts/
 
       - name: Install Jekyll dependencies
+        if: env.IS_GCWEB == 'true'
         working-directory: ${{ env.BUILD_DIR }}
         run: |
           sudo apt-get update
@@ -67,16 +92,22 @@ jobs:
           bundle install
 
       - name: Build Jekyll site
+        if: env.IS_GCWEB == 'true'
         working-directory: ${{ env.BUILD_DIR }}
         run: bundle exec jekyll build
 
+      - name: Build WET
+        if: env.IS_GCWEB == 'false'
+        working-directory: ${{ env.BUILD_DIR }}
+        run: grunt dist
+
       - name: Push generated site to target branch in this repo
         run: |
-          find . -maxdepth 1 ! -name '.*' ! -name '.' ! -name 'gcweb' -exec rm -rf {} +
-          mv gcweb/_site/* .
-          rm -rf gcweb
+          find . -maxdepth 1 ! -name '.*' ! -name '.' ! -name "$BUILD_DIR" -exec rm -rf {} +
+          mv $BUILD_DIR/$OUTPUT_DIR/* .
+          rm -rf $BUILD_DIR
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add .
-          git commit -m "Generated from wet-boew/GCWeb PR #$PR_NUMBER"
+          git commit -m "Generated from $${{ github.event.inputs.source_repo }} PR #$PR_NUMBER"
           git push --force origin gh-pages:$TARGET_BRANCH
