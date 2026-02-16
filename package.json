@@ -1,0 +1,70 @@
+{
+  "name": "GCWeb",
+  "version": "18.3.0",
+  "description": "Web Experience Toolkit (WET): Canada.ca Theme Reorg",
+  "main": "index.html",
+  "scripts": {
+    "post": "grunt",
+    "jekyll": "bundle exec jekyll serve --config _config.yml,_localJekyll.yml --incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wet-boew/GCWeb.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "3.4.3",
+    "wet-boew": "github:wet-boew/wet-boew#v4.0.95"
+  },
+  "peerDependencies": {
+    "@cdssnc/gcds-components": "0.43.1"
+  },
+  "io.github.wet-boew": {
+    "gcdsSriJs": "sha384-LvlLD5RBuKfWk4D3tLBoQb10idfyXY2NzeDN/WylPZcZm1mWEvAAUvtaBOrq3Aw5",
+    "gcdsSriCss": "sha384-nbfuI8ypmBcicF3iEfQgDR5GbezYoSB81DQu2M3imy8Cp5ynFJWqdJ64Qond1esU",
+    "gcdsPiloting": [ "gcds-card", "gcds-grid > gcds-card" ]
+  },
+  "peerDependenciesMeta": {
+    "@cdssnc/gcds-components": {
+      "optional": true
+    }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "ie > 10"
+  ],
+  "devDependencies": {
+    "@double-great/stylelint-a11y": "^3.4.1",
+    "@lodder/grunt-postcss": "^3.0.1",
+    "autoprefixer": "^10.4.24",
+    "coffeescript": "^2.7.0",
+    "eslint": "^9.39.2",
+    "eslint-config-jquery": "^3.0.2",
+    "globals": "^17.3.0",
+    "grunt": "^1.6.1",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^26.0.0",
+    "grunt-html": "^18.0.2",
+    "grunt-jsonlint": "^3.0.0",
+    "grunt-lintspaces": "^0.12.0",
+    "grunt-markdownlint": "^3.1.6",
+    "grunt-sass": "^4.0.1",
+    "grunt-sri": "^0.2.0",
+    "grunt-stylelint": "^0.20.1",
+    "js-yaml": "^4.1.1",
+    "load-grunt-tasks": "^5.1.0",
+    "postcss": "^8.5.6",
+    "sass": "^1.97.3",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.1",
+    "time-grunt": "^2.0.0"
+  }
+}
