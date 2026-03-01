@@ -1,55 +1,7 @@
-[submodule "gcweb-pr2614"]
-	path = gcweb-pr2614
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2614
-[submodule "gcweb-pr2654"]
-	path = gcweb-pr2654
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2654
-[submodule "gcweb-pr2665"]
-	path = gcweb-pr2665
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2665
-[submodule "gcweb-pr2672"]
-	path = gcweb-pr2672
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2672
-[submodule "gcweb-pr2673"]
-	path = gcweb-pr2673
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2673
-[submodule "gcweb-pr2674"]
-	path = gcweb-pr2674
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2674
-[submodule "gcweb-pr2677"]
-	path = gcweb-pr2677
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2677
-[submodule "gcweb-pr2681"]
-	path = gcweb-pr2681
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2681
 [submodule "gcweb-pr2685"]
 	path = gcweb-pr2685
 	url = https://github.com/ServiceCanada/wet-boew-demos.git
 	branch = gcweb-pr2685
-[submodule "gcweb-pr2687"]
-	path = gcweb-pr2687
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2687
-[submodule "gcweb-pr2689"]
-	path = gcweb-pr2689
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2689
-[submodule "gcweb-pr2693"]
-	path = gcweb-pr2693
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2693
-[submodule "gcweb-pr2692"]
-	path = gcweb-pr2692
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2692
 [submodule "gcweb-pr2694"]
 	path = gcweb-pr2694
 	url = https://github.com/ServiceCanada/wet-boew-demos.git
