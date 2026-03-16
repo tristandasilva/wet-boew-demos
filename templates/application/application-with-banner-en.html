@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+
+	<title>Application page with informational banner - Canada.ca</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="description" content=" ">
+<meta name="author" content=" ">
+<meta name="dcterms.title" content="Application page with informational banner">
+<meta name="dcterms.description" content=" ">
+<meta name="dcterms.creator" content=" ">
+<meta name="dcterms.language" content="eng">
+<meta name="dcterms.subject" content="">
+<meta name="dcterms.issued" content="">
+<meta name="dcterms.modified" content="2023-10-13">
+
+	
+
+<link href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/css/theme.css" />
+<noscript><link rel="stylesheet" href="/wet-boew-demos/gcweb-pr2725/dist/wet-boew/css/noscript.css" /></noscript>
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+	<nav>
+	<ul id="wb-tphp">
+		<li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li>
+		<li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to About this site</a></li></ul>
+</nav>
+<section class="info-banner">
+		<div class="container">
+			<h2>Beta version</h2>
+			<p>We've made some changes to improve your experience with My Service Canada Account.</p>
+			<div class="info-banner-actions"><a href="https://www.canada.ca/en">Learn more about the beta version<span class="glyphicon glyphicon-share mrgn-lft-md"></span></a><a class="btn btn-primary" href="https://www.canada.ca/en">Try beta version</a></div>
+		</div>
+	</section><header>
+	<div id="wb-bnr" class="container">
+		<div class="row">
+			
+				<section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+	<h2 class="wb-inv">Language selection</h2>
+	<ul class="list-inline mrgn-bttm-0">
+		<li>
+			<a lang="fr" hreflang="fr" href="application-with-banner-fr.html">
+				<span class="hidden-xs" translate="no">Français</span>
+				<abbr title="Français" translate="no" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
+			</a>
+		</li>
+	</ul>
+</section>
+
+			
+			<div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+	<a href="https://wet-boew.github.io/GCWeb/" property="url">
+		<img src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada" property="logo" /><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span>
+	</a>
+	<meta property="name" content="Government of Canada">
+	<meta property="areaServed" typeof="Country" content="Canada" />
+	<link property="logo" href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/wmms-blk.svg" />
+</div>
+
+			
+		</div>
+	</div>
+	
+	
+
+</header>
+<section class="application-bar">
+		<div class="container">
+			<h2><a href="#">My application</a></h2>
+		</div>
+	</section><main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
+		<h1 id="wb-cont" property="name">Application page with informational banner</h1>
+		<div class="alert alert-info">
+	<p>Please note that the current web page represents a community contribution and <strong>does not yet have</strong> formal validation or approval from the Digital Transformation Office compared to an official design. It should be noted that this contribution does not contradict any officially published version at the time of its addition. It is possible that when an equivalent official design is developed and gets formally published, it may differ partially or entirely from the design shown on this page.</p>
+
+	<p>This <strong>stable</strong> design does share the same benefits as any other stable functionalities and design as defined by the <a href="https://wet-boew.github.io/wet-boew-documentation/decision/14.html">GCWeb public versioning API draft</a>.</p></div>
+
+<h2>Configuration options (GCWeb Jekyll specific)</h2>
+<ul>
+	<li><code>"infoBanner"</code> (optional, <code>Object</code>): contains the informational banner properties.
+		<ul>
+			<li><code>"title"</code> (mandatory): the banner's title.</li>
+			<li><code>"message"</code> (mandatory): the banner's message.</li>
+			<li><code>"link"</code> (optional, <code>Object</code>): contains the link properties.
+				<ul>
+					<li><code>"text"</code> (mandatory, <code>String</code>): the text of the link that is displayed.</li>
+					<li><code>"href"</code> (mandatory, <code>String</code>): the url of the link that is displayed.</li>
+					<li><code>"external"</code> (optional, <code>Boolean</code>): open the link in a new window.</li>
+				</ul>
+			</li>
+			<li><code>"button"</code>(optional, <code>Object</code>): contains the button properties.
+				<ul>
+					<li><code>"text"</code> (mandatory, <code>String</code>): the text of the button that is displayed.</li>
+					<li><code>"href"</code> (mandatory, <code>String</code>): the url of the button that is displayed.</li>
+					<li><code>"external"</code> (optional, <code>Boolean</code>): open the link in a window.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<h3>Code</h3>
+<pre class="wb-prettify prettyprint"><code>{
+	...
+	"infoBanner": {
+		"title": "Beta version",
+		"message": "We've made some changes to improve your experience with My Service Canada Account.",
+		"link": {
+			"text": "Learn more about the beta version",
+			"href": "https://www.canada.ca/en",
+			"external": true
+		},
+		"button": {
+			"text": "Try beta version",
+			"href": "https://www.canada.ca/en"
+		}
+	}
+	...
+}</code></pre>
+
+		<section class="pagedetails">
+	<h2 class="wb-inv">Page details</h2><dl id="wb-dtmd">
+	<dt>Date modified:</dt>
+	<dd><time property="dateModified">2023-10-13</time></dd>
+</dl>
+</section>
+
+	</main>
+
+	<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+
+
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
+					<li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li></ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada" />
+			</div>
+		</div>
+	</div>
+</footer>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script src="/wet-boew-demos/gcweb-pr2725/dist/wet-boew/js/wet-boew.js"></script>
+<script src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/js/theme.js"></script>
+</body>
+
+</html>

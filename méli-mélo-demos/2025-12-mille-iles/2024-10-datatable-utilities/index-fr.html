@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+
+<title>Utilitaire DataTable - Canada.ca</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="Utilities that allow Columns to be MONEY Formatted, Emails wrapped with mailto, url's to be clickable and Footer totals that can be affected by filtered Data Or not.">
+<meta name="author" content=" ">
+<meta name="dcterms.title" content="Utilitaire DataTable">
+<meta name="dcterms.description" content="Utilities that allow Columns to be MONEY Formatted, Emails wrapped with mailto, url's to be clickable and Footer totals that can be affected by filtered Data Or not.">
+<meta name="dcterms.creator" content=" ">
+<meta name="dcterms.language" content="fra">
+<meta name="dcterms.subject" content="">
+<meta name="dcterms.issued" content="">
+<meta name="dcterms.modified" content="2024-10-31 00:00:00 +0000">
+
+
+
+<link href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/css/theme.css" />
+<noscript><link rel="stylesheet" href="/wet-boew-demos/gcweb-pr2725/dist/wet-boew/css/noscript.css" /></noscript><link rel="stylesheet" href="../../../dist/GCWeb/méli-mélo/2025-12-mille-iles.css" />
+</head>
+<body vocab="http://schema.org/" typeof="WebPage"><nav>
+	<ul id="wb-tphp">
+		<li class="wb-slc"><a class="wb-sl" href="#wb-cont">Passer au contenu principal</a></li>
+		<li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Passer à «&#160;À propos de ce site&#160;»</a></li></ul>
+</nav>
+
+<header>
+	<div id="wb-bnr" class="container">
+		<div class="row">
+			
+				<section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+	<h2 class="wb-inv">Sélection de la langue</h2>
+	<ul class="list-inline mrgn-bttm-0">
+		<li>
+			<a lang="en" hreflang="en" href="index-en.html">
+				<span class="hidden-xs" translate="no">English</span>
+				<abbr title="English" translate="no" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">en</abbr>
+			</a>
+		</li>
+	</ul>
+</section>
+
+			
+			<div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+	<a href="https://wet-boew.github.io/GCWeb/" property="url">
+		<img src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/sig-blk-fr.svg" alt="Gouvernement du Canada" property="logo" /><span class="wb-inv"> / <span lang="en">Government of Canada</span></span>
+	</a>
+	<meta property="name" content="Gouvernement du Canada">
+	<meta property="areaServed" typeof="Country" content="Canada" />
+	<link property="logo" href="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/wmms-blk.svg" />
+</div>
+
+			
+				
+<section id="wb-srch" class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4">
+	<h2>Recherche</h2>
+	<form action="https://www.canada.ca/fr/sr/srb.html" method="get" name="cse-search-box" role="search">
+		<div class="form-group wb-srch-qry">
+			<label for="wb-srch-q" class="wb-inv">Rechercher dans Canada.ca</label>
+			<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Rechercher dans Canada.ca" />
+			<datalist id="wb-srch-q-ac"></datalist>
+		</div>
+		<div class="form-group submit">
+			<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub">
+				<span class="glyphicon-search glyphicon"></span>
+				<span class="wb-inv">Recherche</span>
+			</button>
+		</div>
+	</form>
+</section>
+
+			
+		</div>
+	</div>
+	
+	
+	<hr>
+	
+	<div class="container">
+		<div class="row"><div class="col-md-8">
+					<nav class="gcweb-menu" typeof="SiteNavigationElement">
+	<h2 class="wb-inv">Menu</h2>
+	<button type="button" aria-haspopup="true" aria-expanded="false">Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+	<ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-fr.html"><li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/emplois.html">Emplois et milieu de travail</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/immigration-citoyennete.html">Immigration et citoyenneté</a></li>
+		<li role="presentation"><a role="menuitem" href="https://voyage.gc.ca/">Voyage et tourisme</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/entreprises.html">Entreprises et industrie</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/prestations.html">Prestations</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/sante.html">Santé</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/impots.html">Impôts</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/environnement.html">Environnement et ressources naturelles</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/defense.html">Sécurité nationale et défense</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/culture.html">Culture, histoire et sport</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/police.html">Services de police, justice et urgences</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/transport.html">Transport et infrastructure</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.international.gc.ca/world-monde/index.aspx?lang=fra">Canada et le monde</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/finance.html">Argent et finances</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/science.html">Science et innovation</a></li>
+		<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/evenements-vie.html">Gérer les événements de la vie</a></li></ul>
+</nav>
+
+				</div></div>
+	</div>
+	
+	<nav id="wb-bc" property="breadcrumb">
+	<h2>Vous êtes ici :</h2>
+	<div class="container">
+		<ol class="breadcrumb" typeof="BreadcrumbList">
+			<li property="itemListElement" typeof="ListItem">
+				<a property="item" typeof="WebPage" href="https://www.canada.ca/fr.html">
+					<span property="name">Canada.ca</span>
+				</a>
+				<meta property="position" content="1">
+			</li>
+			
+							<li property="itemListElement" typeof="ListItem">
+								<a property="item" typeof="WebPage" href="/wet-boew-demos/gcweb-pr2725/index-fr.html">
+									<span property="name">GCWeb</span>
+								</a>
+								<meta property="position" content="2">
+							</li>
+							
+		</ol>
+	</div>
+</nav>
+
+
+</header>
+
+<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement"><h1 property="name" id="wb-cont">Utilitaire DataTable</h1>
+<div class="wb-prettify all-pre hide"></div>
+
+<p><a href="datatable-utilities-doc-fr.html" class="btn btn-primary">Documentation</a></p>
+
+<h2>Sur cette page</h2>
+<ul>
+    <li><a href="#a1">Table de contrôle avec données brute</a></li>
+    <li><a href="#a2">Exemple 1 de manipulation des données de colonne</a></li>
+    <li><a href="#a3">Exemple 2 de manipulation des données de colonne</a></li>
+    <li><a href="#a4">Pied de page de table avec totaux statiques</a></li>
+    <li><a href="#a5">Pied de page de table avec totaux dynamiques mis à jour lors du filtrage</a></li>
+</ul>
+
+<h2 id="a1">Table de contrôle avec données brute</h2>
+
+<table class="wb-tables table table-striped table-hover table-condensed small" id="t1" data-wb-tables='{ "ajax":"data/datatable-utility.json", "columns": [
+                                      { "data": "DepartmentFR" },
+                                      { "data": "ContactEmail" },
+                                      { "data": "Custom study titleFR" },
+                                      { "data": "Custom study titleFR-url" },
+                                      { "data": "Registration number" },
+                                      { "data": "Contract value" }
+                                    ],
+                            "columnDefs": [{ "className": "text-left", "targets": [0]},
+                                    { "className": "text-left", "targets": [1] },
+                                    { "className": "text-left", "targets": [2] },
+                                    { "className": "text-left", "targets": [3] },
+                                    { "className": "text-left", "targets": [4] },
+                                    { "className": "text-right", "targets": [5] }],
+                                     "lengthMenu": [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"] ]}'>
+    <caption class="text-left">
+        Tableau&nbsp;1&nbsp;: données brute
+    </caption>
+    <thead>
+        <tr class="active">
+            <th scope="col">Ministère</th>
+            <th scope="col">Courriel</th>
+            <th scope="col">Titre de l’étude multi-intérêts</th>
+            <th scope="col">URL de l’étude multi-intérêts</th>
+            <th scope="col">Reg#</th>
+            <th scope="col">Valeur des contrats</th>
+        </tr>
+    </thead>
+</table>
+
+<h2 id="a2">Exemple 1 de manipulation des données de colonne</h2>
+
+<ul>
+    <li><code>.wb-col-mailto</code> Entourer les adresses courriels avec un &lt;a href=&quot;mailto:...&quot;&gt;email@example.net&lt;/a&gt;</li>
+    <li><code>.wb-col-money</code> Formater les nombres en tant que montant d'argent.</li>
+    <li><code>.wb-col-url</code> Fusionner 2 colonnes (nom-colonne, nom-colonne-url) en une seule URL / Sous-titre ou URL et URL comme sous-titre si (nom-colonne-url) n'existe pas dans le fichier JSON.</li>
+</ul>
+
+<pre class="mrgn-bttm-lg">
+    &lt;table class=&quot;wb-tables table table-striped table-hover table-condensed small <strong>wb-tables-utility</strong>&quot; id=&quot;t2&quot;
+            data-wb-tables=&apos;{ &quot;ajax&quot;:&quot;data/datatable-utility.json&quot;,
+                            &quot;columns&quot;: [{ &quot;data&quot;: &quot;DepartmentFR&quot; },
+                                        { &quot;data&quot;: &quot;ContactEmail&quot; },
+                                        { &quot;data&quot;: &quot;Custom study titleFR&quot; },
+                                        { &quot;data&quot;: &quot;Registration number&quot; },
+                                        { &quot;data&quot;: &quot;Contract value&quot; }],
+                                    &quot;columnDefs&quot;: [{ &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [0]},
+                                            { &quot;className&quot;: &quot;text-left <strong>wb-col-mailto</strong>&quot;, &quot;targets&quot;: [1] },
+                                            { &quot;className&quot;: &quot;text-left <strong>wb-col-url</strong>&quot;, &quot;targets&quot;: [2] },
+                                            { &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [3] },
+                                            { &quot;className&quot;: &quot;text-right <strong>wb-col-money</strong>&quot;, &quot;targets&quot;: [4] }],
+                                                &quot;lengthMenu&quot;: [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, &quot;All&quot;] ]}&apos;&gt;
+</pre>
+
+<div class="mrgn-bttm-lg">
+    <table class="wb-tables table table-striped table-hover table-condensed small wb-tables-utility" id="t2" data-wb-tables='{ "ajax":"data/datatable-utility.json", "columns": [
+                                      { "data": "DepartmentFR" },
+                                      { "data": "ContactEmail" },
+                                      { "data": "Custom study titleFR" },
+                                      { "data": "Registration number", "visible": false },
+                                      { "data": "Contract value" }
+                                    ],
+                            "columnDefs": [{ "className": "text-left", "targets": [0]},
+                                    { "className": "text-left wb-col-mailto", "targets": [1] },
+                                    { "className": "text-left wb-col-url", "targets": [2] },
+                                    { "className": "text-left", "targets": [3] },
+                                    { "className": "text-right wb-col-money", "targets": [4] }],
+                                     "lengthMenu": [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"] ]}'>
+        <caption class="text-left">
+            Tableau&nbsp;2&nbsp;: Exemple de manipulation des données JSON
+        </caption>
+        <thead>
+            <tr class="active">
+                <th scope="col">Ministère</th>
+                <th scope="col">Courriel</th>
+                <th scope="col">Titre de l’étude multi-intérêts</th>
+                <th scope="col">Reg#</th>
+                <th scope="col">Valeur des contrats</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<h2 id="a3">Exemple 2 de manipulation des données de colonne</h2>
+
+<p><code>.wb-col-cur-thousand</code> Formater les nombres en tant que montant d'argent sans le signe $.</p>
+
+<pre class="mrgn-bttm-lg">
+    &lt;table class=&quot;wb-tables table table-striped table-hover table-condensed small <strong>wb-tables-utility</strong>&quot; id=&quot;t3&quot;
+            data-wb-tables=&apos;{ &quot;ajax&quot;:&quot;data/datatable-utility.json&quot;,
+                            &quot;columns&quot;: [{ &quot;data&quot;: &quot;DepartmentFR&quot; },
+                                        { &quot;data&quot;: &quot;ContactEmail&quot; },
+                                        { &quot;data&quot;: &quot;Custom study titleFR&quot; },
+                                        { &quot;data&quot;: &quot;Registration number&quot; },
+                                        { &quot;data&quot;: &quot;Contract value&quot; }],
+                                    &quot;columnDefs&quot;: [{ &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [0]},
+                                            { &quot;className&quot;: &quot;text-left <strong>wb-col-mailto</strong>&quot;, &quot;targets&quot;: [1] },
+                                            { &quot;className&quot;: &quot;text-left <strong>wb-col-url</strong>&quot;, &quot;targets&quot;: [2] },
+                                            { &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [3] },
+                                            { &quot;className&quot;: &quot;text-right <strong>wb-col-money</strong>&quot;, &quot;targets&quot;: [4] }],
+                                                &quot;lengthMenu&quot;: [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, &quot;All&quot;] ]}&apos;&gt;
+</pre>
+
+<div class="mrgn-bttm-lg">
+    <table class="wb-tables table table-striped table-hover table-condensed small wb-tables-utility" id="t3" data-wb-tables='{ "ajax":"data/datatable-utility.json", "columns": [
+                                      { "data": "DepartmentFR" },
+                                      { "data": "ContactEmail" },
+                                      { "data": "Custom study titleFR" },
+                                      { "data": "Registration number" },
+                                      { "data": "Contract value" }
+                                    ],
+                            "columnDefs": [{ "className": "text-left", "targets": [0]},
+                                    { "className": "text-left", "targets": [1] },
+                                    { "className": "text-left", "targets": [2] },
+                                    { "className": "text-left", "targets": [3] },
+                                    { "className": "text-right wb-col-cur-thousand", "targets": [4] }],
+                                     "lengthMenu": [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"] ]}'>
+        <caption class="text-left">
+            Tableau&nbsp;3&nbsp;: Deuxième exemple de manipulation des données JSON
+        </caption>
+        <thead>
+            <tr class="active">
+                <th scope="col">Ministère</th>
+                <th scope="col">Courriel</th>
+                <th scope="col">Titre de l’étude multi-intérêts</th>
+                <th scope="col">Reg#</th>
+                <th scope="col">Valeur des contrats</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<h2 id="a4">Pied de page de table avec totaux statiques</h2>
+
+<p><code>.wb-col-sum</code> classe sur la colonne pour effectuer le total de la colonne.</p>
+<p>Ajouter un espace réservé &lt;tfoot&gt; en bas de la table.</p>
+
+<pre class="mrgn-bttm-lg">
+    &lt;tfoot&gt;
+        &lt;tr class=&quot;active&quot;&gt;
+            &lt;th colspan=&quot;4&quot;&gt;Total&lt;/th&gt;
+            &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+</pre>
+
+<h3>Code</h3>
+
+<p>Définissez le paramètre filteredsum a «&nbsp;<code>false</code>&nbsp;» dans le plugiciel <code>data-wb-tables-utility="{\"filteredsum\":false}"</code>, car la valeur par défaut est «&nbsp;<code>true</code>&nbsp;».</p>
+
+<pre class="mrgn-bttm-lg">
+    &lt;table class=&quot;wb-tables table table-striped table-hover table-condensed small <strong>wb-tables-utility</strong>&quot; id=&quot;t4&quot;
+            <strong>data-wb-tables-utility="{&quot;filteredsum&quot;:false}"</strong>
+            data-wb-tables=&apos;{ &quot;ajax&quot;:&quot;data/datatable-utility.json&quot;,
+                            &quot;columns&quot;: [{ &quot;data&quot;: &quot;DepartmentFR&quot; },
+                                        { &quot;data&quot;: &quot;ContactEmail&quot; },
+                                        { &quot;data&quot;: &quot;Custom study titleFR&quot; },
+                                        { &quot;data&quot;: &quot;Registration number&quot; },
+                                        { &quot;data&quot;: &quot;Contract value&quot; }],
+                                    &quot;columnDefs&quot;: [{ &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [0]},
+                                            { &quot;className&quot;: &quot;text-left wb-col-mailto&quot;, &quot;targets&quot;: [1] },
+                                            { &quot;className&quot;: &quot;text-left wb-col-url&quot;, &quot;targets&quot;: [2] },
+                                            { &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [3] },
+                                            { &quot;className&quot;: &quot;text-right <strong>wb-col-sum</strong> wb-col-money&quot;, &quot;targets&quot;: [4] }],
+                                                &quot;lengthMenu&quot;: [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, &quot;All&quot;] ]}&apos;&gt;
+</pre>
+
+<div class="mrgn-bttm-lg">
+    <table class="wb-tables table table-striped table-hover table-condensed small wb-tables-utility" id="t4" data-wb-tables-utility="{&quot;debug&quot;:true, &quot;filteredsum&quot;:false}" data-wb-tables='{ "ajax":"data/datatable-utility.json", "columns": [
+                                      { "data": "DepartmentFR" },
+                                      { "data": "ContactEmail" },
+                                      { "data": "Custom study titleFR" },
+                                      { "data": "Registration number" },
+                                      { "data": "Contract value" }
+                                    ],
+                            "columnDefs": [{ "className": "text-left", "targets": [0]},
+                                    { "className": "text-left wb-col-mailto", "targets": [1] },
+                                    { "className": "text-left wb-col-url", "targets": [2] },
+                                    { "className": "text-left", "targets": [3] },
+                                    { "className": "text-right wb-col-money wb-col-sum", "targets": [4] }],
+                                     "lengthMenu": [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"] ]}'>
+        <caption class="text-left">
+            Tableau&nbsp;4&nbsp;: Exemple de totaux statiques dans le pied de page de table
+        </caption>
+        <thead>
+            <tr class="active">
+                <th scope="col">Ministère</th>
+                <th scope="col">Courriel</th>
+                <th scope="col">Titre de l’étude multi-intérêts</th>
+                <th scope="col">Reg#</th>
+                <th scope="col">Valeur des contrats</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr class="active">
+                <th colspan="4">Total</th>
+                <td>&nbsp;</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<h2 id="a5">Pied de page de table avec totaux dynamiques mis à jour lors du filtrage</h2>
+
+<p><code>.wb-col-sum</code> classe sur la colonne pour effectuer le total de la colonne.</p>
+<p>Ajouter un espace réservé &lt;tfoot&gt; en bas de la table.</p>
+
+<pre class="mrgn-bttm-lg">
+    &lt;tfoot&gt;
+        &lt;tr class=&quot;active&quot;&gt;
+            &lt;th colspan=&quot;4&quot;&gt;Total&lt;/th&gt;
+            &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+</pre>
+
+<h3>Code</h3>
+
+<pre class="mrgn-bttm-lg">
+    &lt;table class=&quot;wb-tables table table-striped table-hover table-condensed small <strong>wb-tables-utility</strong>&quot; id=&quot;t5&quot;
+            data-wb-tables=&apos;{ &quot;ajax&quot;:&quot;data/datatable-utility.json&quot;,
+                            &quot;columns&quot;: [{ &quot;data&quot;: &quot;DepartmentFR&quot; },
+                                        { &quot;data&quot;: &quot;ContactEmail&quot; },
+                                        { &quot;data&quot;: &quot;Custom study titleFR&quot; },
+                                        { &quot;data&quot;: &quot;Registration number&quot; },
+                                        { &quot;data&quot;: &quot;Contract value&quot; }],
+                                    &quot;columnDefs&quot;: [{ &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [0]},
+                                            { &quot;className&quot;: &quot;text-left wb-col-mailto&quot;, &quot;targets&quot;: [1] },
+                                            { &quot;className&quot;: &quot;text-left wb-col-url&quot;, &quot;targets&quot;: [2] },
+                                            { &quot;className&quot;: &quot;text-left&quot;, &quot;targets&quot;: [3] },
+                                            { &quot;className&quot;: &quot;text-right <strong>wb-col-sum</strong> wb-col-money&quot;, &quot;targets&quot;: [4] }],
+                                                &quot;lengthMenu&quot;: [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, &quot;All&quot;] ]}&apos;&gt;
+</pre>
+
+<div class="mrgn-bttm-lg">
+    <table class="wb-tables table table-striped table-hover table-condensed small wb-tables-utility" id="t5" data-wb-tables='{ "ajax":"data/datatable-utility.json", "columns": [
+                                      { "data": "DepartmentFR" },
+                                      { "data": "ContactEmail" },
+                                      { "data": "Custom study titleFR" },
+                                      { "data": "Registration number" },
+                                      { "data": "Contract value" }
+                                    ],
+                            "columnDefs": [{ "className": "text-left", "targets": [0]},
+                                    { "className": "text-left wb-col-mailto", "targets": [1] },
+                                    { "className": "text-left wb-col-url", "targets": [2] },
+                                    { "className": "text-left", "targets": [3] },
+                                    { "className": "text-right wb-col-money wb-col-sum", "targets": [4] }],
+                                     "lengthMenu": [ [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"] ]}'>
+        <caption class="text-left">
+            Table&nbsp;5&nbsp;: Exemple de totaux dynamiques dans le pied de page
+        </caption>
+        <thead>
+            <tr class="active">
+                <th scope="col">Ministère</th>
+                <th scope="col">Courriel</th>
+                <th scope="col">Titre de l’étude multi-intérêts</th>
+                <th scope="col">Reg#</th>
+                <th scope="col">Valeur des contrats</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr class="active">
+                <th colspan="4">Total</th>
+                <td>&nbsp;</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<section class="pagedetails">
+	<h2 class="wb-inv">Détails de la page</h2><dl id="wb-dtmd">
+	<dt>Date de modification&#160;:</dt>
+	<dd><time property="dateModified">2024-10-31 00:00:00 +0000</time></dd>
+</dl>
+</section>
+
+</main>
+<footer id="wb-info">
+	<h2 class="wb-inv">À propos de ce site</h2>
+
+
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Gouvernement du Canada</h3>
+				<ul class="list-col-xs-1 list-col-sm-2 list-col-md-3"><li><a href="https://www.canada.ca/fr/contact.html">Toutes les coordonnées</a></li>
+					<li><a href="https://www.canada.ca/fr/gouvernement/min.html">Ministères et organismes</a></li>
+					<li><a href="https://www.canada.ca/fr/gouvernement/systeme.html">À propos du gouvernement</a></li></ul>
+				<h4><span class="wb-inv">Thèmes et sujets</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3"><li><a href="https://www.canada.ca/fr/services/emplois.html">Emplois</a></li>
+					<li><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">Immigration et citoyenneté</a></li>
+					<li><a href="https://voyage.gc.ca/">Voyage et tourisme</a></li>
+					<li><a href="https://www.canada.ca/fr/services/entreprises.html">Entreprises</a></li>
+					<li><a href="https://www.canada.ca/fr/services/prestations.html">Prestations</a></li>
+					<li><a href="https://www.canada.ca/fr/services/sante.html">Santé</a></li>
+					<li><a href="https://www.canada.ca/fr/services/impots.html">Impôts</a></li>
+					<li><a href="https://www.canada.ca/fr/services/environnement.html">Environnement et ressources naturelles</a></li>
+					<li><a href="https://www.canada.ca/fr/services/defense.html">Sécurité nationale et défense</a></li>
+					<li><a href="https://www.canada.ca/fr/services/culture.html">Culture, histoire et sport</a></li>
+					<li><a href="https://www.canada.ca/fr/services/police.html">Services de police, justice et urgences</a></li>
+					<li><a href="https://www.canada.ca/fr/services/transport.html">Transport et infrastructure</a></li>
+					<li><a href="https://www.international.gc.ca/world-monde/index.aspx?lang=fra">Le Canada et le monde</a></li>
+					<li><a href="https://www.canada.ca/fr/services/finance.html">Argent et finances</a></li>
+					<li><a href="https://www.canada.ca/fr/services/science.html">Science et innovation</a></li>
+					<li><a href="https://www.canada.ca/fr/services/autochtones.html">Autochtones</a></li>
+					<li><a href="https://www.canada.ca/fr/services/veterans-militaire.html">Vétérans et militaires</a></li>
+					<li><a href="https://www.canada.ca/fr/services/jeunesse.html">Jeunesse</a></li>
+					<li><a href="https://www.canada.ca/fr/services/evenements-vie.html">Gérer les événements de la vie</a></li></ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Organisation du gouvernement du Canada</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/fr/sociaux.html">Médias sociaux</a></li>
+					<li><a href="https://www.canada.ca/fr/mobile.html">Applications mobiles</a></li>
+					<li><a href="https://canada.ca/fr/gouvernement/a-propos-canada-ca.html">À propos de Canada.ca</a></li><li><a href="https://www.canada.ca/fr/transparence/avis.html">Avis</a></li>
+					<li><a href="https://www.canada.ca/fr/transparence/confidentialite.html">Confidentialité</a></li></ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/assets/wmms-blk.svg" alt="Symbole du gouvernement du Canada" />
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script src="/wet-boew-demos/gcweb-pr2725/dist/wet-boew/js/wet-boew.js"></script>
+<script src="/wet-boew-demos/gcweb-pr2725/dist/GCWeb/js/theme.js"></script><script src="../../../dist/GCWeb/méli-mélo/2025-12-mille-iles.js"></script>
+</body>
+</html>
