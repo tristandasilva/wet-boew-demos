@@ -1,11 +1,3 @@
-[submodule "gcweb-pr2685"]
-	path = gcweb-pr2685
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2685
-[submodule "gcweb-pr2714"]
-	path = gcweb-pr2714
-	url = https://github.com/ServiceCanada/wet-boew-demos.git
-	branch = gcweb-pr2714
 [submodule "gcweb-pr2725"]
 	path = gcweb-pr2725
 	url = https://github.com/ServiceCanada/wet-boew-demos.git
